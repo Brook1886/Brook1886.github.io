@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    
+    一字三木
+  </title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <main class="content">
+    <section class="jumbotron">
+  <div class="video">
+    
+    <div class="video-frame">
+      <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+    </div>
+    
+    <div class="video-media">
+      <video playsinline="" autoplay="" loop="" muted="" data-autoplay="" poster="/images/ocean/ocean.png"
+        x5-video-player-type="h5">
+        <source src="/images/ocean/ocean.mp4" type="video/mp4">
+        <source src="/images/ocean/ocean.ogv" type="video/ogg">
+        <source src="/images/ocean/ocean.webm" type="video/webm">
+        <p>Your user agent does not support the HTML5 Video element.</p>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="video-inner text-center text-white">
+      <h1><a href="/">一字三木</a></h1>
+      <p></p>
+      <div><img src="/images/hexo-inverted.svg" class="brand" alt="一字三木"></div>
+    </div>
+    <div class="video-learn-more">
+      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+    </div>
+  </div>
+</section>
+<div id="landingpage">
+  <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title"></h1>
+    
+    
+    <article id="post-编程题笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/07/%E7%BC%96%E7%A8%8B%E9%A2%98%E7%AC%94%E8%AE%B0/">编程题笔记</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/12/07/%E7%BC%96%E7%A8%8B%E9%A2%98%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2021-12-07T13:22:03.000Z" itemprop="datePublished">2021-12-07</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        
+      
+      
+      <!-- # 类别
+
+1. 数组
+2. 字符串
+3. 链表
+4. 树
+5. 图
+6. 回溯算法
+7. 排序和搜索
+8. 动态规划
+9. 设计问题
+10.  数学
+11.  其他
+
+--- -->
+
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><ul>
+<li>数据结构基本操作，<code>遍历</code> + <code>访问</code>，具体一点：<code>增</code>、<code>删</code>、<code>查</code>、<code>改</code>（改=读+写）</li>
+<li>数据结构的底层存储方式：数组（顺序存储）和链表（链式存储），数组<code>查</code>、<code>改</code>快，链表<code>增</code>、<code>删</code>快</li>
+</ul>
+<blockquote>
+<p>遍历框架</p>
+</blockquote>
+<ul>
+<li><p>线性形式：for/while 迭代；</p>
+</li>
+<li><p>非线性形式：递归</p>
+</li>
+</ul>
+<ol>
+<li>数组</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># in</span></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> arr:</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引i</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(arr)):</span><br><span class="line">    <span class="built_in">print</span>(i, arr[i])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模拟指针：</span></span><br><span class="line"><span class="comment"># 同向：滑动窗口（j - i固定）、快慢双指针（j走、i走走停停；j比i快一倍）</span></span><br><span class="line"><span class="comment"># 相向：相向双指针（i += 1，j -= 1）</span></span><br><span class="line">windows_size = <span class="number">3</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(windows_size - <span class="number">1</span>, <span class="built_in">len</span>(arr)):</span><br><span class="line">    <span class="built_in">print</span> (i, j)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>链表</li>
+</ol>
+<ul>
+<li>迭代遍历，while循环，直到走到链表尾部或者触发某条件停止</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 链表单结点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value</span>):</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 迭代遍历</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">head: Node</span>):</span></span><br><span class="line">    p = head</span><br><span class="line">    <span class="keyword">while</span> p <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span></span><br><span class="line">        <span class="built_in">print</span>(p.value)</span><br><span class="line">        p = p.<span class="built_in">next</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>栗子：删除倒数第n个结点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># [1, 2, 3, 4, 5], 删除倒数第n == 2个，即删除4，得到[1, 2, 3, 5]</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeNthFromEnd</span>(<span class="params">self, head: Node, n: <span class="built_in">int</span></span>) -&gt; Node:</span></span><br><span class="line">    <span class="comment"># left指针，right指针</span></span><br><span class="line">    <span class="comment"># [1, 2, 3, 4, 5]</span></span><br><span class="line">    <span class="comment">#  |     </span></span><br><span class="line">    <span class="comment"># l/r</span></span><br><span class="line">    l = head</span><br><span class="line">    r = head</span><br><span class="line"></span><br><span class="line">    <span class="comment"># right指针先跑n == 2步</span></span><br><span class="line">    <span class="comment"># [1, 2, 3, 4, 5]</span></span><br><span class="line">    <span class="comment">#  |     |</span></span><br><span class="line">    <span class="comment">#  l     r</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        r = r.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 特殊情况：</span></span><br><span class="line">    <span class="comment"># 如果 n == 5，right指针先跑5步，指向None</span></span><br><span class="line">    <span class="comment"># 此时删除头结点，倒数第五个元素，为head</span></span><br><span class="line">    <span class="comment"># [1, 2, 3, 4, 5] None</span></span><br><span class="line">    <span class="comment">#  |              |</span></span><br><span class="line">    <span class="comment">#  l              r</span></span><br><span class="line">    <span class="keyword">if</span> r <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        head = head.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    <span class="comment"># left指针和right指针同时跑，知道right跑到了尾部tail</span></span><br><span class="line">    <span class="comment"># [1, 2, 3, 4, 5]</span></span><br><span class="line">    <span class="comment">#        |     |</span></span><br><span class="line">    <span class="comment">#        l     r</span></span><br><span class="line">    <span class="keyword">while</span> r.<span class="built_in">next</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        l = l.<span class="built_in">next</span></span><br><span class="line">        r = r.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删除left右边的第一个结点，即倒数第n == 2个结点</span></span><br><span class="line">    <span class="comment"># [1, 2, 3, 4, 5]</span></span><br><span class="line">    <span class="comment">#        |  删 |</span></span><br><span class="line">    <span class="comment">#        l     r</span></span><br><span class="line">    l.<span class="built_in">next</span> = l.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>递归</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">head: Node</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写在这个位置的代码：前序遍历</span></span><br><span class="line">    <span class="comment"># 比如，print(head.value)，实现正序地打印链表：</span></span><br><span class="line"></span><br><span class="line">    traverse(head.<span class="built_in">next</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写在这个位置的代码：后序遍历</span></span><br><span class="line">    <span class="comment"># 比如，print(head.value)，实现倒序地打印链表</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>二叉树</li>
+</ol>
+<p>递归</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二叉树结点</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value=<span class="number">0</span>, left=<span class="literal">None</span>, right=<span class="literal">None</span></span>):</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span></span><br><span class="line">    <span class="comment"># 二叉树：</span></span><br><span class="line">    <span class="comment">#      4 </span></span><br><span class="line">    <span class="comment">#    /   \</span></span><br><span class="line">    <span class="comment">#   2     6   </span></span><br><span class="line">    <span class="comment">#  / \   / \</span></span><br><span class="line">    <span class="comment"># 1   3 5   7</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 递归至叶结点，返回</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">    ans = []  </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写在这个位置的代码：前序遍历，中-&gt;左-&gt;右，4-&gt;2-&gt;1-&gt;3-&gt;6-&gt;5-&gt;7</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 只是打印的话</span></span><br><span class="line">    <span class="comment"># print(root.value, end=&quot;-&gt;&quot;)</span></span><br><span class="line"></span><br><span class="line">    ans += [root.value]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 递归左子树</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        ans += self.traverse(root.left)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写在这个位置的代码：中序遍历，左-&gt;中-&gt;右，1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;7</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 递归右子树</span></span><br><span class="line">    <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        ans += self.traverse(root.right)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写在这个位置的代码：后序遍历，左-&gt;右-&gt;中，1-&gt;3-&gt;2-&gt;5-&gt;7-&gt;6-&gt;4</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>N叉树</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 树结点，children是一个Node的List</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value=<span class="literal">None</span>, children=<span class="literal">None</span></span>):</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.children = children</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">root: Node</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(root.value, end=<span class="string">&quot;-&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> root.children <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> child <span class="keyword">in</span> root.children:</span><br><span class="line">        traverse(child)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># N叉树：</span></span><br><span class="line">    <span class="comment">#      4</span></span><br><span class="line">    <span class="comment">#    /   \</span></span><br><span class="line">    <span class="comment">#   2     6</span></span><br><span class="line">    <span class="comment">#  /    / | \</span></span><br><span class="line">    <span class="comment"># 1   3   5   7</span></span><br><span class="line"></span><br><span class="line">    n6 = Node(<span class="number">7</span>, <span class="literal">None</span>)</span><br><span class="line">    n5 = Node(<span class="number">5</span>, <span class="literal">None</span>)</span><br><span class="line">    n4 = Node(<span class="number">3</span>, <span class="literal">None</span>)</span><br><span class="line">    n3 = Node(<span class="number">1</span>, <span class="literal">None</span>)</span><br><span class="line">    n2 = Node(<span class="number">6</span>, [n4, n5, n6])</span><br><span class="line">    n1 = Node(<span class="number">2</span>, [n3])</span><br><span class="line">    root = Node(<span class="number">4</span>, [n1, n2])</span><br><span class="line"></span><br><span class="line">    traverse(root)  <span class="comment"># 结果：4-&gt;2-&gt;1-&gt;6-&gt;3-&gt;5-&gt;7</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="常见数据结构"><a href="#常见数据结构" class="headerlink" title="常见数据结构"></a>常见数据结构</h2><h2 id="1-栈"><a href="#1-栈" class="headerlink" title="1. 栈"></a>1. <a target="_blank" rel="noopener" href="https://oi-wiki.org/ds/stack/">栈</a></h2><p><img src="/images/stack.svg"></p>
+<p>后进先出 LIFO（last in first out），push 入栈，pop 出栈</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用列表来模拟栈</span></span><br><span class="line">stk = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 append() 向栈顶添加元素</span></span><br><span class="line">stk.append(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 pop 取出栈顶元素</span></span><br><span class="line">stk.pop()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 clear 清空栈</span></span><br><span class="line">stk.clear()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-队列"><a href="#2-队列" class="headerlink" title="2. 队列"></a>2. <a target="_blank" rel="noopener" href="https://oi-wiki.org/ds/queue/">队列</a></h2><p><img src="/images/queue.svg"></p>
+<p>先进先出FIFO（first in first out），push 入队，pop 出队</p>
+<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><p>可以在队首/队尾插入或删除元素的队列，相当于是栈与队列功能的结合</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">queue = deque([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">queue.append(<span class="number">4</span>)</span><br><span class="line">queue.appendleft(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># [0, 1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最右侧数字4出队</span></span><br><span class="line">right_num = queue.pop()</span><br><span class="line"><span class="comment"># 最左侧数字0出队</span></span><br><span class="line">left_num = queue.popleft()</span><br><span class="line"><span class="comment"># [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空队列</span></span><br><span class="line">queue.clear()</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-链表"><a href="#3-链表" class="headerlink" title="3. 链表"></a>3. <a target="_blank" rel="noopener" href="https://oi-wiki.org/ds/linked-list/">链表</a></h2><h2 id="单向链表"><a href="#单向链表" class="headerlink" title="单向链表"></a>单向链表</h2><p>每个结点保存着：数据，和链表里下一结点的内存地址</p>
+<p><img src="/images/list.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value = <span class="literal">None</span>, <span class="built_in">next</span> = <span class="literal">None</span></span>):</span> </span><br><span class="line">        self.value = value</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><p>双向链表跟链表差不多，只是它每个结点都含有两个链：一个指向下一结点，另一个指向前一结点。此外，它还能直接访问第一个和最后一个结点</p>
+<p><img src="/images/double-list.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, value = <span class="literal">None</span>, left = <span class="literal">None</span>, right = <span class="literal">None</span></span>):</span> </span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br></pre></td></tr></table></figure>
+
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1. 冒泡排序"></a>1. 冒泡排序</h3><p>遍历数组，两两比较，冒泡（大于或小于）就交换；多次遍历，直到没有冒泡的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span>(<span class="params">a</span>):</span></span><br><span class="line">    len_of_a = <span class="built_in">len</span>(a)</span><br><span class="line">    bubble_done = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> bubble_done:</span><br><span class="line">        bubble_done = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(len_of_a - <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> a[i] &gt; a[i + <span class="number">1</span>]:</span><br><span class="line">                a[i], a[i+<span class="number">1</span>] = a[i+<span class="number">1</span>], a[i]</span><br><span class="line">                bubble_done = <span class="literal">False</span></span><br><span class="line">        len_of_a -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2. 选择排序"></a>2. 选择排序</h3><p>遍历数组，记录最小值，将最小值与第一个元素交换；从第二个位置再次遍历数组，再次记录最小值，交换；反复，知道排序完成</p>
+<p>冒泡排序和选择排序的时间复杂度都是O(N^2)</p>
+<h3 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3. 插入排序"></a>3. 插入排序</h3><p>从第二个元素开始，拿出该元素和左边进行比较，比拿出元素大的值，往右移动，找到合适位置，插入该元素；反复，知道拿出最后1个元素比较，并插入，从而完成排序。</p>
+<p>插入排序的时间复杂度也是O(N^2)，但这都是基于全都逆序的最坏情况评价的，如果考虑最好情况、平均情况，选择排序和插入排序的速度不一样。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/07/%E7%BC%96%E7%A8%8B%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="ckx749gar0000vend9tk51rtd" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+  </article>
+  
+
+  
+</section>
+</div>
+    <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+  <li><i class="fe fe-bar-chart"></i> <span id="busuanzi_value_site_pv"></span></li>
+  
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>一字三木 &copy; 2021</li>
+      
+        <li>ZHWANGART</li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/hexo.svg" alt="一字三木"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/copybtn.js"></script>
+
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
