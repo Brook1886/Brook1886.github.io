@@ -218,7 +218,8 @@
 <p>问题：<br>给你一个整数数组<strong>coins</strong>，表示不同面额的硬币；以及一个整数<strong>amount</strong>，表示总金额<br>计算并返回可以凑成总金额所需的<strong>最少的硬币个数</strong>，如果没有任何一种硬币组合能组成总金额，返回-1。<br>你可以认为每种硬币的数量是无限的。</p>
 </blockquote>
 <script type="math/tex; mode=display">
-xyz</script><p>状态转移方程：</p>
+xyz = a + b</script><script type="math/tex; mode=display">
+xyz = a + b + c</script><p>状态转移方程：</p>
 <script type="math/tex; mode=display">
 dp(n) =
 \begin{cases}
@@ -246,7 +247,7 @@ min\{dp(n - coin) + 1 | coin \in coins\}  & n > 0
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" data-id="ckxjpv38w0000wand3yy4f6sc" class="article-share-link">
+      <a data-url="http://example.com/2021/12/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" data-id="ckxjqstd600003and38x54olh" class="article-share-link">
         分享
       </a>
       
