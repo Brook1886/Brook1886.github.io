@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>404</title>
-  <meta name="keywords" content="Hexo,404,Design">
-  <meta name="description" content="Tribute Forrest Gump">
-  <link rel="stylesheet" href="/css/404.css">
-</head>
-<body>
-<div class="notfound">
-  <a class="notfound-link" href="/">
-    <img width="30" src="data:image/svg+xml;base64,PHN2ZyB0PSIxNTYyODQyNjI3NDA5IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcC1pZD0iNTIxNDgiIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIj48cGF0aCBkPSJNMTk0LjYgNDc5LjFoNzQ5LjF2NTcuNkgxODYuNEw1MjggODc4LjMgNDg3LjMgOTE5IDEyMSA1NTIuNyA4MC4zIDUxMmw0MDctNDA3IDQwLjcgNDAuN3oiIGZpbGw9IiIgcC1pZD0iNTIxNDkiLz48L3N2Zz4=">
-  </a>
-  <figure class="forrestgump">
-    <figcaption>
-      <h1 style="color: #6b0b0c;">404<br>Not Found!</h1>
-      <h3 style="color: #14206a;">Life was like a box of chocolates, you never know what you're going to get.</h3>
-    </figcaption>
-    <img src="/images/forrestgump.png">
-  </figure>
-</div>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Not Found</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment,
+      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.tld/?p=/one/two&q=a=b~and~c=d#qwe
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (it is currently > 512 bytes)
+
+      // If you're creating a Project Pages site and NOT using a custom domain,
+      // then set segmentCount to 1 (enterprise users may need to set it to > 1).
+      // This way the code will only replace the route part of the path, and not
+      // the real directory in which the app resides, for example:
+      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
+      // https://username.github.io/repo-name/?p=/one/two&q=a=b~and~c=d#qwe
+      // Otherwise, leave segmentCount as 0.
+      var segmentCount = 0;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+
+    </script>
+  </head>
+  <body>
+  </body>
 </html>
